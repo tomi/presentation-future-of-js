@@ -1,0 +1,631 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>The Future of JS</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/night.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="stack present">
+
+        <section data-markdown>
+          <textarea data-template>
+          # The Future of JS
+
+          ### ES6 and beyond
+
+          by <a href="http://twitter.com/TomiTurtiainen">@TomiTurtiainen</a>
+          </textarea>
+        </section>
+      </section>
+
+<!--
+  ECMAscript
+-->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # ECMAScript
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Standard ECMA-262
+            * Specification that defines how ECMAScript works
+            * First version released in 1997
+            * ES3 in 1999
+            * ES5 in 2009
+            * ES6 in 2015 (ES2015)
+            * Now a new version is released every year
+            * Used to be a Word document, now everything is in [Github](https://github.com/tc39)
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## TC39
+            * Committee responsible for evolving the language
+            * Members mainly from major tech companies and browser vendors
+            * Operates by consensus
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## How does the language evolve?
+            * TC39 members create language proposals
+            * Language proposals go through 5 stages
+            * TC39 committee approves acceptance for each stage
+            * All proposals are in [Github](https://github.com/tc39/proposals)
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Stage 0
+            Proposals that are planned to be presented or have been presented to the committee but don't yet fulfill stage 1 criteria
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Stage 1
+            * A "champion" must be identified
+            * Need to describe the problem it solves
+            * Have illustrative usage examples and high level API
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Stage 2
+            * Initial draft of the formal specification
+            * Only incremental changes expected after this
+            * Experimenting with implementations
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Stage 3
+            * Spec text should be finished
+            * Feedback expected from implementors and users
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Stage 4
+            * Proposal will be included in the next revision of ECMAScript
+            * Needs at least two implementations that pass tests
+          </textarea>
+        </section>
+
+      </section>
+
+<!--
+  ES2018
+-->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # ES2018
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Object rest/spread properties
+
+<pre><code class="hljs lang-js javascript">// Rest
+const obj = { foo: 1, bar: 2, baz: 3 };
+const { foo, ...rest } = obj;
+// foo is 1, rest is { bar: 2, baz: 3 }
+
+// Spread
+const obj = { foo: 1, bar: 2, baz: 3 };
+const other = { ...obj, qux: 4 };
+// other is { foo: 1, bar: 2, baz: 3, qux: 4 }</code></pre>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Promise.prototype.finally
+
+<pre><code class="hljs lang-js javascript">promise
+  .then(result => {···})
+  .catch(error => {···})
+  .finally(() => {···});</code></pre>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+              ### Asynchronous iteration
+
+<pre><code class="hljs lang-js javascript">async function* getProducts(categoryUrl) {
+  const list = await fetch(categoryUrl);
+  for (const product of list) {
+    const product = await fetch(product.url);
+    yield product;
+  }
+}
+
+async function readProducts() {
+  const g = getProducts(category)
+  for await (const product of g) {
+    // use product details
+  }
+}</code></pre>
+            </textarea>
+          </section>
+
+        <section>
+          <h3>Named regex captures</h3>
+
+<pre><code class="hljs lang-js javascript">const regexp = /\/
+  (?&lt;hierarchy&gt;[^\/]+)
+  (?&lt;membership&gt;\/.*?)[\/]*
+  (?&lt;name&gt;[^\/]*)
+  $/u;
+
+const hierarchicalName = "/processArea/MK/subsystem1/MainPage";
+const { groups } = regexp.exec(hierarchicalName)
+// {
+//   hierarchy:  "processArea",
+//   membership: "/MK/subsystem1",
+//   name:       "MainPage",
+// }</code></pre>
+        </section>
+
+        <section>
+          <h3>Other regex feature</h3>
+
+          <ul>
+            <li>Look-behind</li>
+            <li>Unicode property escapes</li>
+            <li>s (dotAll) flag</li>
+          </ul>
+        </section>
+      </section>
+
+<!--
+  Stage 3 proposals
+-->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # Stage 3 proposals
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Dynamic import()
+
+<pre><code class="hljs lang-js javascript">const dynamicModule = "myfile";
+
+import(`./dynamic/${ dynamicModule }.js`)
+  .then(module => { ... })
+  .catch(err => { ... });</code></pre>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### BigInt: Arbitrary precision integers
+            * JS only supports integers up to 2<sup>53</sup>
+            * `BigInt` is a new numerical type
+
+<pre><code class="hljs lang-js javascript">const a = 1n + 2n;
+// a is 3n
+
+const bigInt = BigInt.parseInt("987654321", 10);
+const a64    = BigInt.asUintN(64, bigInt);
+// a64 is a 64bit unsigned integer</code></pre>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Private methods and fields
+            Allows a clear, stable interface
+
+<pre><code class="hljs lang-js javascript">class Counter {
+  #x = 0; // I'm private
+
+  // Me too
+  #increment() {
+    this.#x++;
+  }
+}</code></pre>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Array.prototype.{flatMap,flatten}
+<pre><code class="hljs lang-js javascript">// Array.prototype.flatten( [ depth ] )
+const nestedArr = [[1], [2, 3], [4]]
+nestedArr.flatten()
+// > [1, 2, 3, 4]
+
+// Array.prototype.flatMap( mapperFunction [ , thisArg ] )
+const nestedArr = [[1], [2, 3], [4]]
+nestedArr.flatMap(x => x + 1)
+// > [2, 3, 4, 5]</code></pre>
+          </textarea>
+        </section>
+
+      </section>
+
+<!--
+  Stage 2 proposals
+-->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # Stage 2 proposals
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Decorators
+            Have been in TS already a long time
+
+<pre><code class="hljs lang-js javascript">@deprecated("Use this other function instead")
+function oldAndUgly(x) {
+  ...
+}</code></pre>
+          </textarea>
+        </section>
+
+      </section>
+
+<!--
+  Stage 1 proposals
+-->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # Stage 1 proposals
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Pipeline operator
+            Familiar from functional languages
+
+<pre><code class="hljs lang-js javascript">// Instead of...
+doSomething( JSON.parse( localStorage.get(endpoint) ) )
+
+// ...you can write
+localStorage.get(endpoint)
+  |> JSON.parse
+  |> doSomething;</code></pre>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Temporal
+            A modern immutable date time API
+
+            <table>
+              <tr>
+                <th>Object Name</th>
+                <th>Description</th>
+                <th>Example</th>
+              </tr>
+              <tr>
+                <td><code>CivilDate</code></td>
+                <td>Date</td>
+                <td><code>2017-12-31</code></td>
+              </tr>
+              <tr>
+                <td><code>CivilTime</code></td>
+                <td>Time of day</td>
+                <td><code>17:00:00</code></td>
+              </tr>
+              <tr>
+                <td><code>CivilDateTime</code></td>
+                <td>Date and time</td>
+                <td><code>2017-12-31T12:00:00</code></td>
+              </tr>
+              <tr>
+                <td><code>Instant</code></td>
+                <td>Point in timeline w/o time zone</td>
+                <td><code>2017-12-31T00:00:00Z</code></td>
+              </tr>
+              <tr>
+                <td><code>ZonedInstant</code></td>
+                <td>Point in timeline with time zone</td>
+                <td><code>2017‑12‑31T09:00:00+09:00[Asia/Tokyo]</code></td>
+              </tr>
+            </table>
+          </textarea>
+        </section>
+
+      </section>
+
+<!--
+  Stage 0 proposals
+-->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # Stage 0 proposals
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Pattern Matching
+            Common in functional languages
+
+<pre><code class="hljs lang-js javascript">let getLength = vector => match (vector) {
+  { x, y, z }: Math.sqrt(x ** 2 + y ** 2 + z ** 2),
+  { x, y }:    Math.sqrt(x ** 2 + y ** 2),
+  [...]:       vector.length,
+  else: {
+    throw new Error("Unknown vector type");
+  }
+}</code></pre>
+          </textarea>
+        </section>
+
+        <section>
+          <h3>Check the rest of the proposals from <a href="https://github.com/tc39/proposals">Github</a></h3>
+        </section>
+
+      </section>
+
+<!--
+  Browser support
+-->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # So where is the language headed?
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Multi-paradigm
+
+            Some features are familiar from functional paradigm, others from object oriented paradigm
+
+            JavaScript is becoming more and more multi-paradigm
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## What about browser support?
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Era of transpilers
+
+            Babel and TypeScript allow new features even before full browser support
+
+            Enables faster feedback loop between web developers and implementors
+          </textarea>
+        </section>
+
+        <section>
+          <h3>Check the latest support from the <a href="http://kangax.github.io/compat-table/es2016plus/">ECMAScript compatibility table</a></h3>
+        </section>
+
+      </section>
+
+<!--
+  Web as a platform
+-->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # What about the web itself?
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ## Quotes from people much smarter than me
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            > JavaScript will gain more the status of a VM and lose the status of a language
+
+            — André Staltz<sup><a href="https://hashnode.com/ama/with-andre-staltz-cj5mx456r00rl8hwuzjpydy77">*</a></sup>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            > Web frameworks are transforming from runtime libraries into optimizing compilers
+
+            — Tom Dale<sup><a href="https://tomdale.net/2017/09/compilers-are-the-new-frameworks/">*</a></sup>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            > I think everyone will compile to WASM in the future.
+
+            — Scott Hanselman<sup><a href="https://hashnode.com/ama/with-scott-hanselman-cjbx98jh506b34cwtk99ik5ep">*</a></sup>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Plenty of JS "flavors"
+
+            Babel, TypeScript, Elm, PureScript, ClojureScript, Reason
+
+            WebAssembly will bring even more <!-- .element: class="fragment" -->
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### WebAssembly
+
+            * Efficient, low-level bytecode for the Web
+            * Compile target for other languages
+            * Memory safe execution environment
+            * Built on top of the work of asm.js
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### WebAssembly
+
+            <img src="images/wasm-compile.png">
+            <small>Source: <a href="https://hacks.mozilla.org/2017/02/creating-and-working-with-webassembly-modules/">Creating and working with WebAssembly modules</a> By Lin Clark
+            </small>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### WebAssembly
+            * Currently best suited for languages like **C/C++** and **Rust**
+            * Still missing
+              * Direct access to Web APIs
+              * Garbage collection
+              * Multi-threading
+              * ES6 module integration
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### WebAssembly
+            * Webpack is bringing support for WebAssembly modules<sup><a href="https://github.com/webpack/webpack/releases/tag/v4.0.0-beta.0">*</a></sup>
+            * Blazor is a .NET and C# UI framework that compiles to WebAssembly<sup><a href="https://blogs.msdn.microsoft.com/webdev/2018/02/06/blazor-experimental-project/">*</a></sup>
+            * TurboScript has a TS-like syntax and compiles to WASM<sup><a href="https://github.com/01alchemist/TurboScript">*</a></sup>
+          </textarea>
+        </section>
+
+      </section>
+
+<!--
+  Conclusion
+-->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # Conclusion
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### JavaScript is already everywhere
+            * On the Web
+            * On the server (Node.js)
+            * On desktop (Electron)
+            * On mobile (React Native)
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### WebAssembly will speed things up
+
+            Might take some time tho
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### I believe
+
+            In the long run fewer and fewer people will write plain JavaScript
+
+            JavaScript will become more of a runtime
+          </textarea>
+        </section>
+
+      </section>
+
+      <!-- Thanks -->
+      <section class="stack present">
+
+        <section data-markdown>
+          <textarea data-template>
+          ### Thank you!
+
+          ### Questions?
+          </textarea>
+        </section>
+
+      </section>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 960,
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+        maxScale: 1.5,
+
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+</body>
+
+</html>
