@@ -1531,3 +1531,17 @@ body {
 // .reveal table tr:first {
 // 	background-color: #3F3F3F;
 // }
+
+// ADDITIONS
+.reveal .slides section .fragment td {
+	border: 0;
+}
+
+.reveal .slides section .fragment.visible td {
+	border-bottom: 1px solid;
+	vertical-align: middle;
+}
+
+thead tr th {
+	font-weight: bold;
+}

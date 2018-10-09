@@ -40,9 +40,7 @@
         </section>
       </section>
 
-<!--
-  ECMAscript
--->
+      <!-- ECMAscript -->
       <section class="stack present">
         <section data-markdown>
           <textarea data-template>
@@ -59,7 +57,7 @@
             * ES5 in 2009
             * ES6 in 2015 (ES2015)
             * Now a new version is released every year
-            * Used to be a Word document, now everything is in [Github](https://github.com/tc39)
+            * Can be found in [Github](https://github.com/tc39/ecma262)
           </textarea>
         </section>
 
@@ -67,67 +65,153 @@
           <textarea data-template>
             ## TC39
             * Committee responsible for evolving the language
-            * Members mainly from major tech companies and browser vendors
+            * Members are major tech companies (incl. browser vendors)
+            * Delegates and invited experts meet every other month
             * Operates by consensus
+            * [Minutes](https://github.com/tc39/tc39-notes) are available online
+
+            <aside class="notes">
+              Consensus:
+              <ul>
+                <li>Decisions require large majority agreeing</li>
+                <li>Nobody disagrees and vetos</li>
+                <li>For many members, leads to obligations</li>
+              </ul>
+
+              <a href="http://exploringjs.com/es2016-es2017/ch_tc39-process.html#tc39">Source</a>
+            </aside>
           </textarea>
         </section>
 
         <section data-markdown>
           <textarea data-template>
             ## How does the language evolve?
-            * TC39 members create language proposals
-            * Language proposals go through 5 stages
+            * A member or registered contributor creates a proposal
+            * Each proposal needs a "champion" from the TC39
+            * Proposals go through 5 stages
             * TC39 committee approves acceptance for each stage
             * All proposals are in [Github](https://github.com/tc39/proposals)
+
+            <aside class="notes">
+              <ul>
+                <li>ES6 was too large:</li>
+                <ul>
+                  <li>Features that are ready have to wait</li>
+                  <li>Features that take long have pressure to be finished</li>
+                </ul>
+                <li>Starting from ES2016</li>
+                <li><b>Champion: Someone who makes the case for the proposal and helps it move through</b></li>
+              </ul>
+
+              <a href="http://exploringjs.com/es2016-es2017/ch_tc39-process.html#tc39-process">TC-39 process</a>
+              <a href="https://github.com/tc39/ecma262/blob/master/CONTRIBUTING.md">Contributing to ECMA-262</a>
+            </aside>
           </textarea>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-            ## Stage 0
-            Proposals that are planned to be presented or have been presented to the committee but don't yet fulfill stage 1 criteria
-          </textarea>
-        </section>
+        <section>
+          <h2>The 5 stages</h2>
 
-        <section data-markdown>
-          <textarea data-template>
-            ## Stage 1
-            * A "champion" must be identified
-            * Need to describe the problem it solves
-            * Have illustrative usage examples and high level API
-          </textarea>
-        </section>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Stage</th>
+                <th>Purpose</th>
+                <th>Criteria</th>
+                <th>Implementation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="fragment">
+                <td>0</td>
+                <td>Strawman</td>
+                <td>Allow input</td>
+                <td>None</td>
+                <td>N/A</td>
+              </tr>
+              <tr class="fragment">
+                <td>1</td>
+                <td>Proposal</td>
+                <td>Describe the what, why and how</td>
+                <td>
+                  <ul>
+                    <li>Describe the problem it solves</li>
+                    <li>Illustrative usage examples and high level API</li>
+                  </ul>
+                </td>
+                <td>Polyfills / demos</td>
+              </tr>
+              <tr class="fragment">
+                <td>2</td>
+                <td>Draft</td>
+                <td>Precise syntax and semantics</td>
+                <td>
+                  <ul>
+                    <li>Initial draft of the formal specification</li>
+                  </ul>
+                </td>
+                <td>Experimental</td>
+              </tr>
+              <tr class="fragment">
+                <td>3</td>
+                <td>Candidate</td>
+                <td>Gather feedback from implemenations and users</td>
+                <td>
+                  <ul>
+                    <li>Spec text should be finished</li>
+                  </ul>
+                </td>
+                <td>Spec compliant</td>
+              </tr>
+              <tr class="fragment">
+                <td>4</td>
+                <td>Finished</td>
+                <td>Ready for inclusion to ECMA-262</td>
+                <td>
+                  <ul>
+                    <li>Has <a href="https://github.com/tc39/test262">Test 262</a> acceptance tests</li>
+                    <li>Two compatible implementations which pass tests</li>
+                  </ul>
+                </td>
+                <td>Shipping</td>
+              </tr>
+            </tbody>
+          </table>
 
-        <section data-markdown>
-          <textarea data-template>
-            ## Stage 2
-            * Initial draft of the formal specification
-            * Only incremental changes expected after this
-            * Experimenting with implementations
-          </textarea>
-        </section>
+          <aside class="notes">
+            <ul>
+              <li>Stage 0</li>
+              <ul>
+                <li>A free-form way of submitting ideas for evolving ECMAScript</li>
+                <li>From TC39 member or registered contributor.</li>
+                <li>Reviewed in a meeting and added to the page</li>
+              </ul>
+              <li>Stage 1</li>
+              <ul>
+                <li>TC39 declares willingness examine, discuss and contribute</li>
+              </ul>
+              <li>Stage 2</li>
+              <ul>
+                <li>Eventual inclusion is likely</li>
+                <li>Can include TODOs</li>
+                <li>Experimental implementations, like in a transpiler</li>
+              </ul>
+              <li>Stage 3</li>
+              <ul>
+                <li>Mostly finished, gather feedback</li>
+                <li></li>
+              </ul>
+            </ul>
 
-        <section data-markdown>
-          <textarea data-template>
-            ## Stage 3
-            * Spec text should be finished
-            * Feedback expected from implementors and users
-          </textarea>
-        </section>
-
-        <section data-markdown>
-          <textarea data-template>
-            ## Stage 4
-            * Proposal will be included in the next revision of ECMAScript
-            * Needs at least two implementations that pass tests
-          </textarea>
+            <a href="http://exploringjs.com/es2016-es2017/ch_tc39-process.html#tc39-process">TC39 process</a>
+            <a href="https://tc39.github.io/process-document/">TC39 process</a>
+          </aside>
         </section>
 
       </section>
 
-<!--
-  ES2018
--->
+      <!-- ES2018 -->
       <section class="stack present">
         <section data-markdown>
           <textarea data-template>
@@ -137,33 +221,6 @@
 
         <section data-markdown>
           <textarea data-template>
-            ### Object rest/spread properties
-
-<pre><code class="hljs lang-js javascript">// Rest
-const obj = { foo: 1, bar: 2, baz: 3 };
-const { foo, ...rest } = obj;
-// foo is 1, rest is { bar: 2, baz: 3 }
-
-// Spread
-const obj = { foo: 1, bar: 2, baz: 3 };
-const other = { ...obj, qux: 4 };
-// other is { foo: 1, bar: 2, baz: 3, qux: 4 }</code></pre>
-          </textarea>
-        </section>
-
-        <section data-markdown>
-          <textarea data-template>
-            ### Promise.prototype.finally
-
-<pre><code class="hljs lang-js javascript">promise
-  .then(result => {···})
-  .catch(error => {···})
-  .finally(() => {···});</code></pre>
-          </textarea>
-        </section>
-
-        <section data-markdown>
-            <textarea data-template>
               ### Asynchronous iteration
 
 <pre><code class="hljs lang-js javascript">async function* getProducts(categoryUrl) {
@@ -180,25 +237,81 @@ async function readProducts() {
     // use product details
   }
 }</code></pre>
+
+              <aside class="notes">
+                <ul>
+                  <li>Async generator function</li>
+                  <li>Can be used to implement an async queue</li>
+                </ul>
+              </aside>
             </textarea>
-          </section>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Object rest/spread properties
+
+<pre><code class="hljs lang-js javascript">// Rest
+const obj = { foo: 1, bar: 2, baz: 3 };
+const { foo, ...rest } = obj;
+// foo is 1
+// rest is { bar: 2, baz: 3 }
+
+// Spread
+const obj = { foo: 1, bar: 2, baz: 3 };
+const other = { ...obj, qux: 4 };
+// other is { foo: 1, bar: 2, baz: 3, qux: 4 }</code></pre>
+
+          </textarea>
+          <aside class="notes">
+            <ul>
+              <li>Can be used instead of Object.assign to merge objects</li>
+              <li>Object.assign and spread have slightly different schematics</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### Promise.prototype.finally
+
+<pre><code class="hljs lang-js javascript">promise
+  .then(result => {···})
+  .catch(error => {···})
+  .finally(() => {···});</code></pre>
+
+          </textarea>
+          <aside class="notes">
+            <ul>
+              <li>Always executed</li>
+              <li>Can be used e.g. for resource cleanup</li>
+            </ul>
+          </aside>
+        </section>
 
         <section>
           <h3>Named regex captures</h3>
 
-<pre><code class="hljs lang-js javascript">const regexp = /\/
+          <pre><code class="hljs lang-js javascript">const fsPath = "/root/path/to/the/Resource";
+const regexp = /\/
   (?&lt;hierarchy&gt;[^\/]+)
   (?&lt;membership&gt;\/.*?)[\/]*
   (?&lt;name&gt;[^\/]*)
   $/u;
 
-const hierarchicalName = "/processArea/MK/subsystem1/MainPage";
-const { groups } = regexp.exec(hierarchicalName)
+const { groups } = regexp.exec(fsPath)
 // {
-//   hierarchy:  "processArea",
-//   membership: "/MK/subsystem1",
-//   name:       "MainPage",
+//   hierarchy:  "root",
+//   membership: "/path/to/the",
+//   name:       "Resource",
 // }</code></pre>
+
+          <aside class="notes">
+            <ul>
+              <li>More readable and maintainable code</li>
+              <li>No need to change code if order of groups changes</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -209,12 +322,57 @@ const { groups } = regexp.exec(hierarchicalName)
             <li>Unicode property escapes</li>
             <li>s (dotAll) flag</li>
           </ul>
+
+          <aside class="notes">
+
+          </aside>
         </section>
       </section>
 
-<!--
-  Stage 3 proposals
--->
+      <!-- Stage 4 proposals -->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # Stage 4 (ES2019) proposals
+          </textarea>
+        </section>
+
+        <!-- Optional catch binding -->
+        <section data-markdown>
+          <textarea data-template>
+            ### Optional `catch` binding
+            * Allows omitting the `catch` binding
+
+<pre><code class="hljs lang-js javascript">let isTheFeatureImplemented = false;
+try {
+  // Check if it is
+  isTheFeatureImplemented = true;
+} catch { }</code></pre>
+          </textarea>
+
+          <aside class="notes">
+            <ul>
+              <li>Grammatical change</li>
+            </ul>
+          </aside>
+        </section>
+
+        <!-- JSON superser -->
+        <section data-markdown>
+          <textarea data-template>
+            ### JSON superset
+            * U+2028 LINE SEPARATOR and U+2029 PARAGRAPH SEPARATOR
+            * JSON can contain them
+            * JS strings cannot
+          </textarea>
+
+          <aside class="notes">
+          </aside>
+        </section>
+
+      </section>
+
+      <!-- Stage 3 proposals -->
       <section class="stack present">
         <section data-markdown>
           <textarea data-template>
@@ -222,69 +380,149 @@ const { groups } = regexp.exec(hierarchicalName)
           </textarea>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-            ### Dynamic import()
+        <!-- Dynamic import -->
+        <section>
+          <h3>Dynamic import()</h3>
 
-<pre><code class="hljs lang-js javascript">const dynamicModule = "myfile";
+          <pre><code class="hljs lang-js javascript">const main = document.querySelector("main");
+const dynamicModule = "myfile";
 
 import(`./dynamic/${ dynamicModule }.js`)
-  .then(module => { ... })
-  .catch(err => { ... });</code></pre>
-          </textarea>
+  .then(module => {
+    module.loadPageInto(main);
+  })
+  .catch(err => {
+    main.textContent = err.message;
+  });</code></pre>
+
+          <aside class="notes">
+            <ul>
+              <li>Current import modules are static declarations</li>
+              <li>Dynamically load parts of JS application at runtime</li>
+              <li>E.g. runtime values, performance, robustness</li>
+            </ul>
+          </aside>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-            ### BigInt: Arbitrary precision integers
-            * JS only supports integers up to 2<sup>53</sup>
-            * `BigInt` is a new numerical type
+        <!-- global -->
+        <section>
+          <h3><code>global</code></h3>
 
-<pre><code class="hljs lang-js javascript">const a = 1n + 2n;
+          <ul>
+            <li>On browsers <code>window</code>, <code>this</code>, <code>self</code></li>
+            <li>On Node.js <code>global</code> or <code>this</code></li>
+            <li>Can't use name <code>global</code></li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>Can't be called global.</li>
+            </ul>
+          </aside>
+        </section>
+
+        <!-- Class features -->
+        <section>
+          <h3>New Class features</h3>
+
+          <pre class="stretch"><code class="hljs lang-js javascript">class Counter {
+  // Public, private and static fields
+  publicValue = 0;
+  #privateValue = 0;
+  static staticField = 0;
+
+  // Private getters and setter
+  get #value() { return #privateValue; }
+  set #value(val) {
+    this.#privateValue = val;
+  }
+
+  constructor() {}
+
+  // Private methods
+  #increment() {
+    this.#privateValue++;
+  }
+}</code></pre>
+
+          <aside class="notes">
+            <ul>
+              <li>3 different proposals</li>
+              <ul>
+                <li><a href="https://github.com/tc39/proposal-private-methods">Private methods</a></li>
+                <li><a href="https://github.com/tc39/proposal-class-fields">Class fields</a></li>
+                <li><a href="https://github.com/tc39/proposal-static-class-features/">Static class features</a></li>
+              </ul>
+            </ul>
+          </aside>
+        </section>
+
+        <!-- BigInt -->
+        <section>
+          <h3>BigInt: Arbitrary precision integers</h3>
+
+          <p>JS only supports integers up to 2<sup>53</sup>-1</p>
+
+          <pre><code class="hljs lang-js javascript">const a = 1n + 2n;
 // a is 3n
 
 const bigInt = BigInt.parseInt("987654321", 10);
 const a64    = BigInt.asUintN(64, bigInt);
 // a64 is a 64bit unsigned integer</code></pre>
-          </textarea>
+
+          <aside class="notes">
+            <ul>
+              <li>New primitive</li>
+              <li>Has same operators as Number</li>
+              <li>Already in Chrome, underway for TS</li>
+            </ul>
+          </aside>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-            ### Private methods and fields
-            Allows a clear, stable interface
+        <!-- Array flatMap, flat -->
+        <section>
+          <h3>Array.prototype.{flatMap,flat}</h3>
 
-<pre><code class="hljs lang-js javascript">class Counter {
-  #x = 0; // I'm private
-
-  // Me too
-  #increment() {
-    this.#x++;
-  }
-}</code></pre>
-          </textarea>
-        </section>
-
-        <section data-markdown>
-          <textarea data-template>
-            ### Array.prototype.{flatMap,flatten}
-<pre><code class="hljs lang-js javascript">// Array.prototype.flatten( [ depth ] )
+          <pre><code class="hljs lang-js javascript">// Array.prototype.flat( [ depth ] )
 const nestedArr = [[1], [2, 3], [4]]
-nestedArr.flatten()
+nestedArr.flat()
 // > [1, 2, 3, 4]
 
 // Array.prototype.flatMap( mapperFunction [ , thisArg ] )
 const nestedArr = [[1], [2, 3], [4]]
 nestedArr.flatMap(x => x + 1)
 // > [2, 3, 4, 5]</code></pre>
-          </textarea>
+
+          <aside class="notes">
+            <ul>
+              <li>The smoosh gate</li>
+            </ul>
+          </aside>
         </section>
 
+        <!-- Object.fromEntries -->
+        <section>
+          <h3>Object.fromEntries</h3>
+
+          Reverse of <code>Object.entries</code>
+
+          <pre><code class="hljs lang-js javascript">obj = Object.fromEntries([
+  ['a', 0],
+  ['b', 1]
+]);
+
+// obj is { a: 0, b: 1 }
+</code></pre>
+
+          <aside class="notes">
+            <ul>
+              <li>Lodash has _.fromPairs</li>
+            </ul>
+          </aside>
+        </section>
       </section>
 
-<!--
-  Stage 2 proposals
--->
+      <!-- Stage 2 proposals -->
       <section class="stack present">
         <section data-markdown>
           <textarea data-template>
@@ -292,23 +530,102 @@ nestedArr.flatMap(x => x + 1)
           </textarea>
         </section>
 
-        <section data-markdown>
+        <!-- Decorator -->
+        <!-- <section data-markdown>
           <textarea data-template>
             ### Decorators
-            Have been in TS already a long time
 
-<pre><code class="hljs lang-js javascript">@deprecated("Use this other function instead")
-function oldAndUgly(x) {
-  ...
+<pre><code class="hljs lang-js javascript">@defineElement("num-counter")
+class Counter extends HTMLElement {
+  @observed #x = 0;
+
+  @bound
+  #clicked() {
+    this.#x++;
+  }
+
+  @bound
+  render() {
+    this.textContent = this.#x.toString();
+  }
 }</code></pre>
           </textarea>
+
+          <aside class="notes">
+            <ul>
+              <li>Allows adding behavior to an individual object</li>
+            </ul>
+          </aside>
+        </section> -->
+
+        <!-- Temporal -->
+        <section>
+          <h3>Temporal</h3>
+
+          A modern immutable date time API
+
+          <table>
+            <tr>
+              <th>Object Name</th>
+              <th>Description</th>
+              <th>Example</th>
+            </tr>
+            <tr>
+              <td><code>CivilDate</code></td>
+              <td>Date</td>
+              <td><code>2017-12-31</code></td>
+            </tr>
+            <tr>
+              <td><code>CivilTime</code></td>
+              <td>Time of day</td>
+              <td><code>17:00:00</code></td>
+            </tr>
+            <tr>
+              <td><code>CivilDateTime</code></td>
+              <td>Date and time</td>
+              <td><code>2017-12-31T12:00:00</code></td>
+            </tr>
+            <tr>
+              <td><code>Instant</code></td>
+              <td>Point in timeline w/o time zone</td>
+              <td><code>2017-12-31T00:00:00Z</code></td>
+            </tr>
+            <tr>
+              <td><code>ZonedInstant</code></td>
+              <td>Point in timeline with time zone</td>
+              <td><code>2017‑12‑31T09:00:00+09:00[Asia/Tokyo]</code></td>
+            </tr>
+          </table>
+
+          <aside class="notes">
+            <ul>
+              <li>JS Date is long time pain point</li>
+              <li>All objects are immutable</li>
+            </ul>
+          </aside>
+        </section>
+
+        <!-- Other -->
+        <section data-markdown>
+          <textarea data-template>
+            ### Other interesting proposals
+
+            * Decorators
+            * Numeric separators
+            * Top-level await
+            * Realms
+          </textarea>
+
+          <aside class="notes">
+            <ul>
+              <li></li>
+            </ul>
+          </aside>
         </section>
 
       </section>
 
-<!--
-  Stage 1 proposals
--->
+      <!-- Stage 1 proposals -->
       <section class="stack present">
         <section data-markdown>
           <textarea data-template>
@@ -318,65 +635,23 @@ function oldAndUgly(x) {
 
         <section data-markdown>
           <textarea data-template>
-            ### Pipeline operator
-            Familiar from functional languages
+            ### Lots of interesting proposals
 
-<pre><code class="hljs lang-js javascript">// Instead of...
-doSomething( JSON.parse( localStorage.get(endpoint) ) )
-
-// ...you can write
-localStorage.get(endpoint)
-  |> JSON.parse
-  |> doSomething;</code></pre>
-          </textarea>
-        </section>
-
-        <section data-markdown>
-          <textarea data-template>
-            ### Temporal
-            A modern immutable date time API
-
-            <table>
-              <tr>
-                <th>Object Name</th>
-                <th>Description</th>
-                <th>Example</th>
-              </tr>
-              <tr>
-                <td><code>CivilDate</code></td>
-                <td>Date</td>
-                <td><code>2017-12-31</code></td>
-              </tr>
-              <tr>
-                <td><code>CivilTime</code></td>
-                <td>Time of day</td>
-                <td><code>17:00:00</code></td>
-              </tr>
-              <tr>
-                <td><code>CivilDateTime</code></td>
-                <td>Date and time</td>
-                <td><code>2017-12-31T12:00:00</code></td>
-              </tr>
-              <tr>
-                <td><code>Instant</code></td>
-                <td>Point in timeline w/o time zone</td>
-                <td><code>2017-12-31T00:00:00Z</code></td>
-              </tr>
-              <tr>
-                <td><code>ZonedInstant</code></td>
-                <td>Point in timeline with time zone</td>
-                <td><code>2017‑12‑31T09:00:00+09:00[Asia/Tokyo]</code></td>
-              </tr>
-            </table>
+            * New collection methods
+            * Optional chaining
+            * Observable
+            * `do` expressions
+            * Pipeline operator
+            * Slice notation
+            * Pattern matching
+            * Cancellation API
           </textarea>
         </section>
 
       </section>
 
-<!--
-  Stage 0 proposals
--->
-      <section class="stack present">
+      <!-- Stage 0 proposals -->
+      <!-- <section class="stack present">
         <section data-markdown>
           <textarea data-template>
             # Stage 0 proposals
@@ -403,11 +678,9 @@ localStorage.get(endpoint)
           <h3>Check the rest of the proposals from <a href="https://github.com/tc39/proposals">Github</a></h3>
         </section>
 
-      </section>
+      </section> -->
 
-<!--
-  Browser support
--->
+      <!-- Browser support -->
       <section class="stack present">
         <section data-markdown>
           <textarea data-template>
@@ -415,41 +688,111 @@ localStorage.get(endpoint)
           </textarea>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-            ## Multi-paradigm
+        <!-- Different level features -->
+        <section>
+          <h3>New features on different levels</h3>
 
-            Some features are familiar from functional paradigm, others from object oriented paradigm
+          <ul>
+            <li>New (standard library) functions</li>
+            <li>New primitives & objects</li>
+            <li>New syntax</li>
+            <li>New operators</li>
+          </ul>
 
-            JavaScript is becoming more and more multi-paradigm
-          </textarea>
+          <aside class="notes">
+            <ul>
+              <li>Functions:</li>
+              <ul>
+                <li>Array.{flat,flatMap}</li>
+                <li>String.{trimStart,trimEnd}</li>
+                <li>Object.fromEntries</li>
+              </ul>
+              <li>Primitives & objects:</li>
+              <ul>
+                <li>BigInt</li>
+                <li>Temporal</li>
+                <li>Realms</li>
+              </ul>
+              <li>Syntax</li>
+              <ul>
+                <li>import()</li>
+                <li>Class extensions</li>
+              </ul>
+              <li>Operators</li>
+              <ul>
+                <li>Pipeline</li>
+              </ul>
+            </ul>
+          </aside>
         </section>
 
+        <!-- Different paradigms -->
+        <section>
+          <h3>Features for different paradigms</h3>
+
+          <ul>
+            <li>Object-oriented features</li>
+            <li>Functional features</li>
+            <li>Reactive features</li>
+
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>Object oriented:</li>
+              <ul>
+                <li>Class extensions, private fields, decorators</li>
+              </ul>
+              <li>Functional</li>
+              <ul>
+                <li>Partial application</li>
+                <li>Pipeline operators</li>
+                <li>Pattern matching</li>
+              </ul>
+              <li>Reactive</li>
+              <ul>
+                <li>Observable</li>
+              </ul>
+            </ul>
+          </aside>
+        </section>
+
+        <!-- Browser support -->
         <section data-markdown>
           <textarea data-template>
             ## What about browser support?
           </textarea>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-            ## Era of transpilers
+        <section data-background-image="images/browser-support.png">
+        </section>
 
-            Babel and TypeScript allow new features even before full browser support
+        <!-- Era of transpilers -->
+        <section>
+          <h2>Era of transpilers</h2>
 
-            Enables faster feedback loop between web developers and implementors
-          </textarea>
+          <p>Babel and TypeScript allow new features even before full browser support</p>
+
+          <p>Enables faster feedback loop between web developers and implementors</p>
+
+          <aside class="notes">
+            <ul>
+              <li>Babel has 5,5 million weekly NPM downloads</li>
+              <li>TypeScript has 3,4 million weekly NPM downloads</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
-          <h3>Check the latest support from the <a href="http://kangax.github.io/compat-table/es2016plus/">ECMAScript compatibility table</a></h3>
+          <h3>Check the latest support from the <a href="http://kangax.github.io/compat-table/es2016plus/">ECMAScript
+              compatibility table</a></h3>
         </section>
 
       </section>
 
-<!--
-  Web as a platform
--->
+      <!-- Web as a platform -->
+
+      <!--
       <section class="stack present">
         <section data-markdown>
           <textarea data-template>
@@ -488,17 +831,15 @@ localStorage.get(endpoint)
         </section>
 
         <section data-markdown>
-          <textarea data-template>
-            ### Plenty of JS "flavors"
+          <h3>Plenty of JS "flavors"</h3>
 
-            Babel, TypeScript, Elm, PureScript, ClojureScript, Reason
+          Babel, TypeScript, Elm, PureScript, ClojureScript, Reason
 
-            WebAssembly will bring even more <!-- .element: class="fragment" -->
-          </textarea>
-        </section>
+          <p class="fragment">WebAssembly will bring even more</p>
+      </section>
 
-        <section data-markdown>
-          <textarea data-template>
+      <section data-markdown>
+        <textarea data-template>
             ### WebAssembly
 
             * Efficient, low-level bytecode for the Web
@@ -506,20 +847,20 @@ localStorage.get(endpoint)
             * Memory safe execution environment
             * Built on top of the work of asm.js
           </textarea>
-        </section>
+      </section>
 
-        <section data-markdown>
-          <textarea data-template>
+      <section data-markdown>
+        <textarea data-template>
             ### WebAssembly
 
             <img src="images/wasm-compile.png">
             <small>Source: <a href="https://hacks.mozilla.org/2017/02/creating-and-working-with-webassembly-modules/">Creating and working with WebAssembly modules</a> By Lin Clark
             </small>
           </textarea>
-        </section>
+      </section>
 
-        <section data-markdown>
-          <textarea data-template>
+      <section data-markdown>
+        <textarea data-template>
             ### WebAssembly
             * Currently best suited for languages like **C/C++** and **Rust**
             * Still missing
@@ -528,31 +869,39 @@ localStorage.get(endpoint)
               * Multi-threading
               * ES6 module integration
           </textarea>
-        </section>
-
-        <section>
-          <h3>WebAssembly</h3>
-
-          <ul>
-            <li>Webpack is bringing support for WebAssembly modules<sup><a href="https://github.com/webpack/webpack/releases/tag/v4.0.0-beta.0">*</a></sup></li>
-            <li>Blazor is a .NET and C# UI framework that compiles to WebAssembly<sup><a href="https://blogs.msdn.microsoft.com/webdev/2018/02/06/blazor-experimental-project/">*</a></sup></li>
-            <li>TurboScript has a TS-like syntax and compiles to WASM<sup><a href="https://github.com/01alchemist/TurboScript">*</a></sup></li>
-            <li>Unity<sup><a href="https://blogs.unity3d.com/2015/06/18/webgl-webassembly-and-feature-roadmap/">*</a></sup> and Unreal Engine<sup><a href="https://www.unrealengine.com/en-US/blog/unreal-engine-4-16-released">*</a></sup></li>
-          </ul>
-        </section>
-
       </section>
 
-<!--
-  Conclusion
--->
+      <section>
+        <h3>WebAssembly</h3>
+
+        <ul>
+          <li>Webpack is bringing support for WebAssembly modules<sup><a href="https://github.com/webpack/webpack/releases/tag/v4.0.0-beta.0">*</a></sup></li>
+          <li>Blazor is a .NET and C# UI framework that compiles to WebAssembly<sup><a href="https://blogs.msdn.microsoft.com/webdev/2018/02/06/blazor-experimental-project/">*</a></sup></li>
+          <li>TurboScript has a TS-like syntax and compiles to WASM<sup><a href="https://github.com/01alchemist/TurboScript">*</a></sup></li>
+          <li>Unity<sup><a href="https://blogs.unity3d.com/2015/06/18/webgl-webassembly-and-feature-roadmap/">*</a></sup>
+            and Unreal Engine<sup><a href="https://www.unrealengine.com/en-US/blog/unreal-engine-4-16-released">*</a></sup></li>
+        </ul>
+      </section>
+      </section>
+      -->
+
+      <!-- Conclusion -->
       <section class="stack present">
-        <section data-markdown>
-          <textarea data-template>
-            # Conclusion
-          </textarea>
+        <section>
+          <h1>Conclusion</h1>
+
+          <p class="fragment">Lots of interesting proposals</p>
+          <p class="fragment">JS is becoming ever more multi-paradigm</p>
+          <p class="fragment">Transpilers allow early usage of features</p>
+
+          <aside class="notes">
+            <ul>
+              <li></li>
+            </ul>
+          </aside>
         </section>
 
+        <!--
         <section data-markdown>
           <textarea data-template>
             ### JavaScript is already everywhere
@@ -579,7 +928,7 @@ localStorage.get(endpoint)
 
             JavaScript will become more of a runtime
           </textarea>
-        </section>
+        </section> -->
 
       </section>
 
@@ -588,9 +937,11 @@ localStorage.get(endpoint)
 
         <section data-markdown>
           <textarea data-template>
-          ### Thank you!
+          ## Thank you!
 
-          ### Questions?
+          ## Questions?
+
+          <!-- See this in <a href="https://github.com/tomi/future-of-js">https://github.com/tomi/future-of-js</a> -->
           </textarea>
         </section>
 
@@ -610,15 +961,15 @@ localStorage.get(endpoint)
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 960,
+        width: 1100,
         height: 700,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 0.2,
 
         // Bounds for smallest/largest possible scale to apply to content
         minScale: 0.2,
-        maxScale: 1.5,
+        maxScale: 1.2,
 
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
