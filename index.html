@@ -48,17 +48,24 @@
           </textarea>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-            ## Standard ECMA-262
-            * Specification that defines how ECMAScript works
-            * First version released in 1997
-            * ES3 in 1999
-            * ES5 in 2009
-            * ES6 in 2015 (ES2015)
-            * Now a new version is released every year
-            * Can be found in [Github](https://github.com/tc39/ecma262)
-          </textarea>
+        <section>
+          <h2>Standard ECMA-262</h2>
+
+          <ul>
+            <li>Specification that defines how ECMAScript works</li>
+            <li>First version released in 1997</li>
+            <li>ES3 in 1999</li>
+            <li>ES5 in 2009</li>
+            <li>ES6 in 2015 (ES2015)</li>
+            <li>Now a new version is released every year</li>
+            <li>Can be found in <a href="https://github.com/tc39/ecma262">Github</a></li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li></li>
+            </ul>
+          </aside>
         </section>
 
         <section data-markdown>
@@ -156,7 +163,7 @@
               <tr class="fragment">
                 <td>3</td>
                 <td>Candidate</td>
-                <td>Gather feedback from implemenations and users</td>
+                <td>Gather feedback from implementations and users</td>
                 <td>
                   <ul>
                     <li>Spec text should be finished</li>
@@ -221,7 +228,7 @@
 
         <section data-markdown>
           <textarea data-template>
-              ### Asynchronous iteration
+              ### [Asynchronous iteration](https://github.com/tc39/proposal-async-iteration)
 
 <pre><code class="hljs lang-js javascript">async function* getProducts(categoryUrl) {
   const list = await fetch(categoryUrl);
@@ -247,11 +254,12 @@ async function readProducts() {
             </textarea>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-            ### Object rest/spread properties
+        <section>
+          <h3>
+            <a href="https://github.com/tc39/proposal-object-rest-spread">Object rest/spread properties</a>
+          </h3>
 
-<pre><code class="hljs lang-js javascript">// Rest
+          <pre><code class="hljs lang-js javascript">// Rest
 const obj = { foo: 1, bar: 2, baz: 3 };
 const { foo, ...rest } = obj;
 // foo is 1
@@ -262,7 +270,6 @@ const obj = { foo: 1, bar: 2, baz: 3 };
 const other = { ...obj, qux: 4 };
 // other is { foo: 1, bar: 2, baz: 3, qux: 4 }</code></pre>
 
-          </textarea>
           <aside class="notes">
             <ul>
               <li>Can be used instead of Object.assign to merge objects</li>
@@ -271,16 +278,16 @@ const other = { ...obj, qux: 4 };
           </aside>
         </section>
 
-        <section data-markdown>
-          <textarea data-template>
-            ### Promise.prototype.finally
+        <section>
+          <h3>
+            <a href="https://github.com/tc39/proposal-promise-finally">Promise.prototype.finally</a>
+          </h3>
 
-<pre><code class="hljs lang-js javascript">promise
+          <pre><code class="hljs lang-js javascript">promise
   .then(result => {···})
   .catch(error => {···})
   .finally(() => {···});</code></pre>
 
-          </textarea>
           <aside class="notes">
             <ul>
               <li>Always executed</li>
@@ -290,7 +297,9 @@ const other = { ...obj, qux: 4 };
         </section>
 
         <section>
-          <h3>Named regex captures</h3>
+          <h3>
+            <a href="https://github.com/tc39/proposal-regexp-named-groups">Named regex captures</a>
+          </h3>
 
           <pre><code class="hljs lang-js javascript">const fsPath = "/root/path/to/the/Resource";
 const regexp = /\/
@@ -318,9 +327,9 @@ const { groups } = regexp.exec(fsPath)
           <h3>Other regex feature</h3>
 
           <ul>
-            <li>Look-behind</li>
-            <li>Unicode property escapes</li>
-            <li>s (dotAll) flag</li>
+            <li><a href="https://github.com/tc39/proposal-regexp-lookbehind">Look-behind</a></li>
+            <li><a href="https://github.com/tc39/proposal-regexp-unicode-property-escapes">Unicode property escapes</a></li>
+            <li><a href="https://github.com/tc39/proposal-regexp-dotall-flag">s (dotAll) flag</a></li>
           </ul>
 
           <aside class="notes">
@@ -338,17 +347,16 @@ const { groups } = regexp.exec(fsPath)
         </section>
 
         <!-- Optional catch binding -->
-        <section data-markdown>
-          <textarea data-template>
-            ### Optional `catch` binding
-            Allows omitting the `catch` binding
+        <section>
+          <h3>
+            <a href="https://github.com/tc39/proposal-optional-catch-binding">Optional <code>catch</code> binding</a>
+          </h3>
 
-<pre><code class="hljs lang-js javascript">let isTheFeatureImplemented = false;
+          <pre><code class="hljs lang-js javascript">let isTheFeatureImplemented = false;
 try {
   // Check if it is
   isTheFeatureImplemented = true;
 } catch { }</code></pre>
-          </textarea>
 
           <aside class="notes">
             <ul>
@@ -358,15 +366,19 @@ try {
         </section>
 
         <!-- JSON superser -->
-        <section data-markdown>
-          <textarea data-template>
-            ### JSON superset
-            * U+2028 LINE SEPARATOR and U+2029 PARAGRAPH SEPARATOR
-            * JSON can contain them
-            * JS strings cannot
-          </textarea>
+        <section>
+          <h3>
+            <a href="https://github.com/tc39/proposal-json-superset">JSON superset</a>
+          </h3>
+
+          <ul>
+            <li>U+2028 LINE SEPARATOR and U+2029 PARAGRAPH SEPARATOR</li>
+            <li>JSON can contain them</li>
+            <li>JS strings cannot</li>
+          </ul>
 
           <aside class="notes">
+            Causes implementation headaches
           </aside>
         </section>
 
@@ -382,7 +394,9 @@ try {
 
         <!-- Dynamic import -->
         <section>
-          <h3>Dynamic import()</h3>
+          <h3>
+            <a href="https://github.com/tc39/proposal-dynamic-import">Dynamic import()</a>
+          </h3>
 
           <pre><code class="hljs lang-js javascript">const main = document.querySelector("main");
 const dynamicModule = "myfile";
@@ -406,7 +420,9 @@ import(`./dynamic/${ dynamicModule }.js`)
 
         <!-- global -->
         <section>
-          <h3><code>global</code></h3>
+          <h3>
+            <a href="https://github.com/tc39/proposal-global"><code>globalThis</code></a>
+          </h3>
 
           <ul>
             <li>On browsers <code>window</code>, <code>this</code>, <code>self</code></li>
@@ -423,7 +439,11 @@ import(`./dynamic/${ dynamicModule }.js`)
 
         <!-- Class features -->
         <section>
-          <h3>New Class features</h3>
+          <h3>
+            <a href="https://github.com/tc39/proposal-private-methods">New</a>
+            <a href="https://github.com/tc39/proposal-class-fields">Class</a>
+            <a href="http://github.com/tc39/proposal-static-class-features/">features</a>
+          </h3>
 
           <pre class="stretch"><code class="hljs lang-js javascript">class Counter {
   // Public, private and static fields
@@ -459,16 +479,21 @@ import(`./dynamic/${ dynamicModule }.js`)
 
         <!-- BigInt -->
         <section>
-          <h3>BigInt: Arbitrary precision integers</h3>
+          <h3>
+            <a href="https://github.com/tc39/proposal-bigint"><code>BigInt</code>: Arbitrary precision integers</a>
+          </h3>
 
           <p>JS only supports integers up to 2<sup>53</sup>-1</p>
 
-          <pre><code class="hljs lang-js javascript">const a = 1n + 2n;
-// a is 3n
+          <pre><code class="hljs lang-js javascript">// Literal + constructor
+const theBiggestInt = 9007199254740991n;
+const alsoHuge = BigInt(9007199254740991);
+const hugeButString = BigInt('9007199254740991');
+// ↪ 9007199254740991n
 
-const bigInt = BigInt.parseInt("987654321", 10);
-const a64    = BigInt.asUintN(64, bigInt);
-// a64 is a 64bit unsigned integer</code></pre>
+// Same operators as with Number
+const bigN = 2n ** 54n;
+// ↪ 18014398509481984n</code></pre>
 
           <aside class="notes">
             <ul>
@@ -481,7 +506,9 @@ const a64    = BigInt.asUintN(64, bigInt);
 
         <!-- Array flatMap, flat -->
         <section>
-          <h3>Array.prototype.{flatMap,flat}</h3>
+          <h3>
+            <a href="https://github.com/tc39/proposal-flatMap">Array.prototype.{flatMap,flat}</a>
+          </h3>
 
           <pre><code class="hljs lang-js javascript">// Array.prototype.flat( [ depth ] )
 const nestedArr = [[1], [2, 3], [4]]
@@ -502,7 +529,9 @@ nestedArr.flatMap(x => x + 1)
 
         <!-- Object.fromEntries -->
         <section>
-          <h3>Object.fromEntries</h3>
+          <h3>
+            <a href="https://github.com/bakkot/object-from-entries">Object.fromEntries</a>
+          </h3>
 
           Reverse of <code>Object.entries</code>
 
@@ -531,11 +560,12 @@ nestedArr.flatMap(x => x + 1)
         </section>
 
         <!-- Decorator -->
-        <!-- <section data-markdown>
-          <textarea data-template>
-            ### Decorators
+        <section>
+          <h3>
+            <a href="http://github.com/tc39/proposal-decorators">Decorators</a>
+          </h3>
 
-<pre><code class="hljs lang-js javascript">@defineElement("num-counter")
+          <pre><code class="hljs lang-js javascript">@defineElement("num-counter")
 class Counter extends HTMLElement {
   @observed #x = 0;
 
@@ -549,18 +579,19 @@ class Counter extends HTMLElement {
     this.textContent = this.#x.toString();
   }
 }</code></pre>
-          </textarea>
 
           <aside class="notes">
             <ul>
               <li>Allows adding behavior to an individual object</li>
             </ul>
           </aside>
-        </section> -->
+        </section>
 
         <!-- Temporal -->
         <section>
-          <h3>Temporal</h3>
+          <h3>
+            <a href="https://github.com/maggiepint/proposal-temporal">Temporal</a>
+          </h3>
 
           <p>A modern immutable date time API</p>
 
@@ -610,16 +641,15 @@ class Counter extends HTMLElement {
           <textarea data-template>
             ### Other interesting proposals
 
-            * Decorators
-            * Numeric separators
-            * Top-level await
-            * Realms
-            * And many more
+            * [Numeric separators](https://github.com/tc39/proposal-numeric-separator)
+            * [Top-level `await`](https://github.com/tc39/proposal-top-level-await)
+            * [Realms](https://github.com/caridy/proposal-realms)
+            * [And many more](https://github.com/tc39/proposals#stage-2)
           </textarea>
 
           <aside class="notes">
             <ul>
-              <li></li>
+              <li>Realms: can create sandbox-like environments</li>
             </ul>
           </aside>
         </section>
@@ -638,18 +668,159 @@ class Counter extends HTMLElement {
           <textarea data-template>
             ### Lots of interesting proposals
 
-            * New collection methods
-            * Optional chaining
-            * Observable
-            * `do` expressions
-            * Pipeline operator
-            * Slice notation
-            * Pattern matching
-            * Cancellation API
-            * And many more
+            * [New collection methods](https://github.com/tc39/collection-methods)
+            * [Optional chaining](https://github.com/tc39/proposal-optional-chaining)
+            * [Observable](https://github.com/tc39/proposal-observable)
+            * [`do` expressions](https://github.com/tc39/proposal-do-expressions)
+            * [Pipeline operator](https://github.com/tc39/proposal-pipeline-operator)
+            * [Slice notation](https://github.com/gsathya/proposal-slice-notation/)
+            * [Pattern matching](https://github.com/tc39/proposal-pattern-matching)
+            * [Cancellation API](https://github.com/tc39/proposal-cancellation)
+            * [And many more](https://github.com/tc39/proposals#stage-1)
           </textarea>
         </section>
 
+      </section>
+
+      <!-- How long does it take? -->
+      <section class="stack present">
+        <section data-markdown>
+          <textarea data-template>
+            # How long does it take?
+          </textarea>
+        </section>
+
+        <!-- Table -->
+        <section>
+          <table class="times stretch">
+            <tr>
+              <th>Proposal</th>
+              <th>Stage 1</th>
+              <th>Stage 2</th>
+              <th>Stage 3</th>
+              <th>Stage 4</th>
+              <th>Time (months)</th>
+            </tr>
+            <tr>
+              <td>Object Rest spread</td>
+              <td>2014-09</td>
+              <td>2015-07</td>
+              <td>2016-09</td>
+              <td>2018-01</td>
+              <td style="text-align: center">40</td>
+            </tr>
+            <tr>
+              <td>Async iterators</td>
+              <td>2016-01</td>
+              <td>2016-03</td>
+              <td>2016-09</td>
+              <td>2018-01</td>
+              <td style="text-align: center">24</td>
+            </tr>
+            <tr>
+              <td>RegEx Unicode escape</td>
+              <td>2016-07</td>
+              <td>2016-09</td>
+              <td>2017-03</td>
+              <td>2018-01</td>
+              <td style="text-align: center">18</td>
+            </tr>
+            <tr>
+              <td>Promise.finally</td>
+              <td>2016-07</td>
+              <td>2016-07</td>
+              <td>2017-07</td>
+              <td>2018-01</td>
+              <td style="text-align: center">18</td>
+            </tr>
+            <tr>
+              <td>JSON superset</td>
+              <td>2017-09</td>
+              <td>2017-11</td>
+              <td>2018-01</td>
+              <td>2018-05</td>
+              <td style="text-align: center">8</td>
+            </tr>
+            <tr>
+              <td>Private methods & accessor</td>
+              <td>???</td>
+              <td>2017-07</td>
+              <td>2017-09</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Public Class fields</td>
+              <td>???</td>
+              <td>2016-07</td>
+              <td>2017-07</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>String.prototype.matchAll</td>
+              <td>2015-09</td>
+              <td>2017-09</td>
+              <td>2018-01</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>String.prototype.{trimLeft,trimgRight}</td>
+              <td>2015-07</td>
+              <td>2016-07</td>
+              <td>2018-01</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>System.global</td>
+              <td>???</td>
+              <td>2016-03</td>
+              <td>2016-09</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>dynamic import()</td>
+              <td>2016-09</td>
+              <td>2016-09</td>
+              <td>2016-12</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Temporal</td>
+              <td>2017-03</td>
+              <td>2018-09</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>String.prototype.replaceAll</td>
+              <td>2017-11</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>do expression</td>
+              <td>2017-01</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+
+          <aside class="notes">
+            <ul>
+              <li></li>
+            </ul>
+          </aside>
+        </section>
       </section>
 
       <!-- Stage 0 proposals -->
@@ -972,6 +1143,8 @@ class Counter extends HTMLElement {
         // Bounds for smallest/largest possible scale to apply to content
         minScale: 0.2,
         maxScale: 1.2,
+
+        history: true,
 
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
